@@ -1,0 +1,268 @@
+{% extends 'layout.html' %}
+{% block content %}
+<select id="majorcategory">
+    <option value="">選択してください
+    <option value="010000">建設業
+    <option value="020000">製造業
+    <option value="030000">電気・ガス・熱供給・水道業
+    <option value="040000">情報通信業
+    <option value="050000">運輸業、郵便業
+    <option value="060000">卸売業
+    <option value="070000">小売業
+    <option value="080000">金融業、保険業
+    <option value="090000">不動産業、物品賃貸業
+    <option value="100000">専門・技術サービス業
+    <option value="110000">宿泊業、飲食サービス業
+    <option value="120000">生活関連サービス業、娯楽業
+    <option value="130000">教育、学習支援業
+    <option value="140000">医療、福祉
+    <option value="150000">サービス業（他に分類されないもの）
+    <option value="160000">その他の産業
+</select>
+
+<select id="middlecategory">
+    <option value="">選択してください</option>
+    <option value="010100" data-val="010000">総合工事業</option>
+    <option value="010200" data-val="010000">職別工事業</option>
+    <option value="010300" data-val="010000">設備工事業</option>
+    <option value="010400" data-val="010000">（なし）</option>
+    <option value="020100" data-val="020000">食料品製造業</option>
+    <option value="020200" data-val="020000">飲料・たばこ・飼料製造業</option>
+    <option value="020300" data-val="020000">繊維工業</option>
+    <option value="020400" data-val="020000">パルプ・紙・紙加工品</option>
+    <option value="020500" data-val="020000">印刷・同関連業</option>
+    <option value="020600" data-val="020000">化学工業</option>
+    <option value="020700" data-val="020000">プラスチック製品製造業</option>
+    <option value="020800" data-val="020000">ゴム製品製造業</option>
+    <option value="020900" data-val="020000">窯業・土石製品製造業</option>
+    <option value="021000" data-val="020000">鉄鋼業</option>
+    <option value="021100" data-val="020000">非鉄金属製造業</option>
+    <option value="021200" data-val="020000">金属製品製造業</option>
+    <option value="021300" data-val="020000">はん用機械器具製造業</option>
+    <option value="021400" data-val="020000">生産用機械器具製造業</option>
+    <option value="021500" data-val="020000">業務用機械器具製造業</option>
+    <option value="021600" data-val="020000">電子部品・デバイス・電子回路製造業</option>
+    <option value="021700" data-val="020000">電気機械器具製造業</option>
+    <option value="021800" data-val="020000">情報通信機械器具製造業</option>
+    <option value="021900" data-val="020000">輸送用機械器具製造業</option>
+    <option value="022000" data-val="020000">その他の製造業</option>
+    <option value="022100" data-val="020000">（なし）</option>
+    <option value="030100" data-val="030000">（なし）</option>
+    <option value="040100" data-val="040000">情報サービス業</option>
+    <option value="040200" data-val="040000">インターネット附随サービス業</option>
+    <option value="040300" data-val="040000">映像・音声・文字情報制作業</option>
+    <option value="040400" data-val="040000">その他の情報通信業</option>
+    <option value="040500" data-val="040000">（なし）</option>
+    <option value="050100" data-val="050000">道路貨物運送業</option>
+    <option value="050200" data-val="050000">水運業</option>
+    <option value="050300" data-val="050000">運輸に附帯するサービス業</option>
+    <option value="050400" data-val="050000">その他の運輸業、郵便業</option>
+    <option value="050500" data-val="050000">（なし）</option>
+    <option value="060100" data-val="060000">各種商品卸売業</option>
+    <option value="060200" data-val="060000">繊維・衣服等卸売業</option>
+    <option value="060300" data-val="060000">飲食料品卸売業</option>
+    <option value="060400" data-val="060000">建築材料、鉱物・金属材料等卸売業</option>
+    <option value="060500" data-val="060000">機械器具卸売業</option>
+    <option value="060600" data-val="060000">その他の卸売業</option>
+    <option value="060700" data-val="060000">（なし）</option>
+    <option value="070100" data-val="070000">各種商品小売業</option>
+    <option value="070200" data-val="070000">織物・衣服・身の回り品小売業</option>
+    <option value="070300" data-val="070000">飲食料品小売業</option>
+    <option value="070400" data-val="070000">機械器具小売業</option>
+    <option value="070500" data-val="070000">その他の小売業</option>
+    <option value="070600" data-val="070000">無店舗小売業</option>
+    <option value="070700" data-val="070000">（なし）</option>
+    <option value="080100" data-val="080000">銀行業</option>
+    <option value="080200" data-val="080000">金融商品取引業、商品先物取引業</option>
+    <option value="080300" data-val="080000">その他の金融業、保険業</option>
+    <option value="080400" data-val="080000">（なし）</option>
+    <option value="090100" data-val="090000">不動産取引業</option>
+    <option value="090200" data-val="090000">不動産賃貸業・管理業</option>
+    <option value="090300" data-val="090000">物品賃貸業</option>
+    <option value="090400" data-val="090000">（なし）</option>
+    <option value="100100" data-val="100000">専門サービス業</option>
+    <option value="100200" data-val="100000">広告業</option>
+    <option value="100300" data-val="100000">（なし）</option>
+    <option value="110100" data-val="110000">飲食店</option>
+    <option value="110200" data-val="110000">その他の宿泊業、飲食サービス業</option>
+    <option value="110300" data-val="110000">（なし）</option>
+    <option value="120100" data-val="120000">生活関連サービス業</option>
+    <option value="120200" data-val="120000">娯楽業</option>
+    <option value="120300" data-val="120000">（なし）</option>
+    <option value="130100" data-val="130000">（なし）</option>
+    <option value="140100" data-val="140000">（なし）</option>
+    <option value="150100" data-val="150000">職業紹介・労働者派遣業</option>
+    <option value="150200" data-val="150000">その他の事業サービス業</option>
+    <option value="150300" data-val="150000">（なし）</option>
+    <option value="160100" data-val="160000">（なし）</option>
+</select>
+
+<select id="subcategory">
+    <option value="">選択してください</option>
+    <option value="1" data-val="010400">（なし）</option>
+    <option value="2" data-val="010100">（なし）</option>
+    <option value="3" data-val="010100">建築工事業（木造建築工事業を除く）</option>
+    <option value="4" data-val="010100">その他の総合工事業</option>
+    <option value="5" data-val="010200">（なし）</option>
+    <option value="6" data-val="010300">（なし）</option>
+    <option value="7" data-val="010300">電気工事業</option>
+    <option value="8" data-val="010300">電気通信・信号装置工事業</option>
+    <option value="9" data-val="010300">その他の設備工事業</option>
+    <option value="10" data-val="022100">（なし）</option>
+    <option value="11" data-val="020100">（なし）</option>
+    <option value="12" data-val="020100">>畜産食料品製造業</option>
+    <option value="13" data-val="020100">パン・菓子製造業</option>
+    <option value="14" data-val="020100">その他の食料品製造</option>
+    <option value="15" data-val="020200">（なし）</option>
+    <option value="16" data-val="020300">（なし）</option>
+    <option value="17" data-val="020400">（なし）</option>
+    <option value="18" data-val="020500">（なし）</option>
+    <option value="19" data-val="020600">（なし）</option>
+    <option value="20" data-val="020600">有機化学工業製品製造業</option>
+    <option value="21" data-val="020600">油脂加工製品・石けん・合成洗剤・界面活性剤・塗料製造業</option>
+    <option value="22" data-val="020600">医薬品製造業</option>
+    <option value="23" data-val="020600">その他の化学工業</option>
+    <option value="24" data-val="020700">（なし）</option>
+    <option value="25" data-val="020800">（なし）</option>
+    <option value="26" data-val="020900">（なし）</option>
+    <option value="27" data-val="020900">セメント・同製品製造業</option>
+    <option value="28" data-val="020900">その他の窯業・土石</option>
+    <option value="29" data-val="021000">（なし）</option>
+    <option value="30" data-val="021100">（なし）</option>
+    <option value="31" data-val="021200">（なし）</option>
+    <option value="32" data-val="021200">建設用・建築用金属</option>
+    <option value="33" data-val="021200">その他の金属製品製造業</option>
+    <option value="34" data-val="021300">（なし）</option>
+    <option value="35" data-val="021400">（なし）</option>
+    <option value="36" data-val="021400">金属加工機械製造業</option>
+    <option value="37" data-val="021400">その他の生産用機械器具製造業</option>
+    <option value="38" data-val="021500">（なし）</option>
+    <option value="39" data-val="021600">（なし）</option>
+    <option value="40" data-val="021600">電子部品製造業</option>
+    <option value="41" data-val="021600">電子回路製造業</option>
+    <option value="42" data-val="021600">その他の電子部品・デバイス・電子回路製造業</option>
+    <option value="43" data-val="021700">（なし）</option>
+    <option value="44" data-val="021700">発電用・送電用・配電用電気機械器具製造業</option>
+    <option value="45" data-val="021700">電気計測器製造業</option>
+    <option value="46" data-val="021700">その他の電気機械器具製造業</option>
+    <option value="47" data-val="021800">（なし）</option>
+    <option value="48" data-val="021900">（なし）</option>
+    <option value="49" data-val="021900">自動車・同附属品製造業</option>
+    <option value="50" data-val="021900">その他の輸送用機械器具製造業</option>
+    <option value="51" data-val="022000">（なし）</option>
+    <option value="52" data-val="030100">（なし）</option>
+    <option value="53" data-val="040500">（なし）</option>
+    <option value="54" data-val="040100">（なし）</option>
+    <option value="55" data-val="040100">ソフトウェア業</option>
+    <option value="56" data-val="040100">情報処理・提供サービス業</option>
+    <option value="57" data-val="040200">（なし）</option>
+    <option value="58" data-val="040300">（なし）</option>
+    <option value="59" data-val="040400">（なし）</option>
+    <option value="60" data-val="050500">（なし）</option>
+    <option value="61" data-val="050100">（なし）</option>
+    <option value="62" data-val="050200">（なし）</option>
+    <option value="63" data-val="050300">（なし）</option>
+    <option value="64" data-val="050400">（なし）</option>
+    <option value="65" data-val="060700">（なし）</option>
+    <option value="66" data-val="060100">（なし）</option>
+    <option value="67" data-val="060200">（なし）</option>
+    <option value="68" data-val="060300">（なし）</option>
+    <option value="69" data-val="060300">農畜産物・水産物卸売業</option>
+    <option value="70" data-val="060300">食料・飲料卸売業</option>
+    <option value="71" data-val="060400">（なし）</option>
+    <option value="72" data-val="060400">価額製品卸売業</option>
+    <option value="73" data-val="060400">その他の建築材料、鉱物・金属材料等卸売業</option>
+    <option value="74" data-val="060500">（なし）</option>
+    <option value="75" data-val="060500">産業機械器具卸売業</option>
+    <option value="76" data-val="060500">電気機械器具卸売業</option>
+    <option value="77" data-val="060500">その他の機械器具卸売業</option>
+    <option value="78" data-val="060600">（なし）</option>
+    <option value="79" data-val="070700">（なし）</option>
+    <option value="80" data-val="070100">（なし）</option>
+    <option value="81" data-val="070200">（なし）</option>
+    <option value="82" data-val="070300">（なし）</option>
+    <option value="83" data-val="070400">（なし）</option>
+    <option value="84" data-val="070500">（なし）</option>
+    <option value="85" data-val="070500">医薬品・化粧品小売業</option>
+    <option value="86" data-val="070500">その他の小売業</option>
+    <option value="87" data-val="070600">（なし）</option>
+    <option value="88" data-val="080400">（なし）</option>
+    <option value="89" data-val="080100">（なし）</option>
+    <option value="90" data-val="080200">（なし）</option>
+    <option value="91" data-val="080300">（なし）</option>
+    <option value="92" data-val="090400">（なし）</option>
+    <option value="93" data-val="090100">（なし）</option>
+    <option value="94" data-val="090200">（なし）</option>
+    <option value="95" data-val="090300">（なし）</option>
+    <option value="96" data-val="100300">（なし）</option>
+    <option value="97" data-val="100100">（なし）</option>
+    <option value="98" data-val="100200">（なし）</option>
+    <option value="99" data-val="110300">（なし）</option>
+    <option value="100" data-val="110100">（なし）</option>
+    <option value="101" data-val="110100">食堂、レストラン（専門料理店を除く）</option>
+    <option value="102" data-val="110100">専門料理店</option>
+    <option value="103" data-val="110100">その他の飲食店</option>
+    <option value="104" data-val="110200">（なし）</option>
+    <option value="105" data-val="120300">（なし）</option>
+    <option value="106" data-val="120100">（なし）</option>
+    <option value="107" data-val="120200">（なし）</option>
+    <option value="108" data-val="130100">（なし）</option>
+    <option value="109" data-val="140100">（なし）</option>
+    <option value="110" data-val="150300">（なし）</option>
+    <option value="111" data-val="150100">（なし）</option>
+    <option value="112" data-val="150200">（なし）</option>
+    <option value="113" data-val="160100">（なし）</option>
+</select>
+
+<select id="yearmonth">
+    <option value="">選択してください
+    <option value="202101">2021年1月（令和3年1月）
+    <option value="202102">2021年2月（令和3年2月）
+    <option value="202103">2021年3月（令和3年3月）
+    <option value="202104">2021年4月（令和3年4月）
+    <option value="202105">2021年5月（令和3年5月）
+    <option value="202106">2021年6月（令和3年6月）
+    <option value="202107">2021年7月（令和3年7月）
+    <option value="202108">2021年8月（令和3年8月）
+    <option value="202109">2021年9月（令和3年9月）
+    <option value="202110">2021年10月（令和3年10月）
+    <option value="202111">2021年11月（令和3年11月）
+    <option value="202112">2021年12月（令和3年12月）
+    <option value="2010ar">2021年平均（令和3年平均）
+</select>
+<button type="button" onclick="submit();" class="btn btn-primary">倍率評価の実施</button>
+
+
+<!-- https://web-camp.io/magazine/archives/85111 -->
+<script>
+    var $midd = $('select[id="middlecategory"]');
+    $('select[id="majorcategory"]').change(function() {
+      var val1 = $(this).val();  
+      $midd.find('option').each(function() {
+        var val2 = $(this).data('val');
+        if (val1 === val2) {
+          $(this).show();
+        }else {
+          $(this).hide();
+        }
+      })
+    })
+</script>
+
+<script>
+    var $sub = $('select[id="subcategory"]');
+    $('select[id="middlecategory"]').change(function() {
+      var val1 = $(this).val();  
+      $sub.find('option').each(function() {
+        var val2 = $(this).data('val');
+        if (val1 === val2) {
+          $(this).show();
+        }else {
+          $(this).hide();
+        }
+      })
+    })
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,74 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+{% for result in results %}
+
+<div class="container mt-4">
+    <h3>DCF法による企業価値評価結果</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">成長率<br>割引率</th>
+                <th scope="col">{{ '%0.1f'|format(result.grows_rate_01 * 100|float) }}%<br><br></th>
+                <th scope="col">{{ '%0.1f'|format(result.grows_rate_06 * 100|float) }}%<br><br></th>
+                <th scope="col">{{ '%0.1f'|format(result.grows_rate_11 * 100|float) }}%<br><br></th>
+                <th scope="col">{{ '%0.1f'|format(result.grows_rate_16 * 100|float) }}%<br><br></th>
+                <th scope="col">{{ '%0.1f'|format(result.grows_rate_21 * 100|float) }}%<br><br></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ '%0.1f'|format(result.wacc_adj_01 * 100|float) }}%</th>
+                <td class="result">{{ format_currency(result.valuation_01) }}</td>
+                <td class="result">{{ format_currency(result.valuation_06) }}</td>
+                <td class="result">{{ format_currency(result.valuation_11) }}</td>
+                <td class="result">{{ format_currency(result.valuation_16) }}</td>
+                <td class="result">{{ format_currency(result.valuation_21) }}</td>
+            </tr>
+            <tr>
+                <th scope="row">{{ '%0.1f'|format(result.wacc_adj_02 * 100|float) }}%</th>
+                <td class="result">{{ format_currency(result.valuation_02) }}</td>
+                <td class="result">{{ format_currency(result.valuation_07) }}</td>
+                <td class="result">{{ format_currency(result.valuation_12) }}</td>
+                <td class="result">{{ format_currency(result.valuation_17) }}</td>
+                <td class="result">{{ format_currency(result.valuation_22) }}</td>
+            </tr>
+            <tr>
+                <th scope="row">{{ '%0.1f'|format(result.wacc_adj_03 * 100|float) }}%</th>
+                <td class="result">{{ format_currency(result.valuation_03) }}</td>
+                <td class="result">{{ format_currency(result.valuation_08) }}</td>
+                <td class="result">{{ format_currency(result.valuation_13) }}</td>
+                <td class="result">{{ format_currency(result.valuation_18) }}</td>
+                <td class="result">{{ format_currency(result.valuation_23) }}</td>
+            </tr>
+            <tr>
+                <th scope="row">{{ '%0.1f'|format(result.wacc_adj_04 * 100|float) }}%</th>
+                <td class="result">{{ format_currency(result.valuation_04) }}</td>
+                <td class="result">{{ format_currency(result.valuation_09) }}</td>
+                <td class="result">{{ format_currency(result.valuation_14) }}</td>
+                <td class="result">{{ format_currency(result.valuation_19) }}</td>
+                <td class="result">{{ format_currency(result.valuation_24) }}</td>
+            </tr>
+            <tr>
+                <th scope="row">{{ '%0.1f'|format(result.wacc_adj_05 * 100|float) }}%</th>
+                <td class="result">{{ format_currency(result.valuation_05) }}</td>
+                <td class="result">{{ format_currency(result.valuation_10) }}</td>
+                <td class="result">{{ format_currency(result.valuation_15) }}</td>
+                <td class="result">{{ format_currency(result.valuation_20) }}</td>
+                <td class="result">{{ format_currency(result.valuation_25) }}</td>
+                <!-- https://stackoverflow.com/questions/46144767/how-to-format-a-float-number-in-python-flask-and-jinja -->
+            </tr>
+        </tbody>
+    </table>
+    <div id="footnote">
+        <p>（単位：千円）</p>
+    </div>
+    <div>
+        <a href="/edit" role="button">入力データを修正する</a>
+    </div>
+</div>
+
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.data_plus }}
+    {{ form.data_minus }}
+    {{ form.data_plus_minus }}
+</form>
+
+
+
+{% endblock %}

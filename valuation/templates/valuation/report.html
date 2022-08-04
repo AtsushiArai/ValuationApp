@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&subset=latin-ext" rel="stylesheet"/>
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="../static/css/webslides.css"/>
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="../static/css/svg-icons.css"/>
+
+{% block content %}
+
+  <body>
+    <!-- PUT WEBSLIDES PRESENTATION CONTENT HERE -->
+    <article id="webslides">
+      <!-- 1st slide -->
+      <section class="bg-gradient-r aligncenter">
+        <h1>株価算定報告書</h1>
+      </section>
+
+      <!-- 2nd slide -->
+      <section>
+        <div class="wrap">
+          <div class="">
+            <h2>評価対象会社：●●●●●</h2>
+            <p class="text-subtitle"></p>
+            <hr>
+            <p class="text-intro">●年●月●日に●●●●●（HPアドレス）において評価対象会社の株価算定を行いました。</p>
+            <p class="text-intro">株価算定の結果については次項以降のとおりです。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3rd slide -->
+      <section>
+        <div class="wrap">
+          <div class="">
+            <h2>株価算定報告書の目的</h2>
+            <p class="text-subtitle"></p>
+            <hr>
+            <h3>株価算定対象会社</h3>
+            <p class="text-intro">　●●●●●●●●●●（以下、「対象会社」といいます）</p>
+            <h3>株価算定の目的</h3>
+            <p class="text-intro">　本株価算定報告書（以下、「本報告書」といいます）は、civic economy合同会社（以下、「報告者」といいます）が構築した算定式（以下、「算定式」といいます）を利用し、対象会社の評価を得ることを目的に財務情報等の情報を入力した者（以下、「入力者」といいます）に対し、入力された情報をもとに算定された株価を報告するものであり、他の一切の目的のために作成されたものではありません。</p>
+            <p class="text-intro">　算定式は一定の仮定のもとに作成されており、対象会社がおかれている状況や、対象会社の財務情報に合致しない場合があります。また、算定式に基づき機械的に算出しているため、財務情報を詳細に理解・分析を行なったうえで算定された株価と乖離が生じる可能性があります。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4th slide -->
+      <section>
+        <div class="wrap">
+          <div class="">
+            <h2>評価結果の報告</h2>
+            <p class="text-subtitle">以下のとおり、1株あたり株価を算定いたしました。</p>
+            <hr>
+            <h3>DCF法</h3>
+            <p class="text-intro">上限：●●●●●円　（参考：株価総額　●●●●●●●●●円)</p>
+            <p class="text-intro">下限：●●●●●円　（参考：株価総額　●●●●●●●●●円)</p>
+            <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th scope="col">割引率/成長率</th>
+                      <th scope="col">-2.0%</th>
+                      <th scope="col">-1.0%</th>
+                      <th scope="col">0.0%</th>
+                      <th scope="col">1.0%</th>
+                      <th scope="col">2.0%</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th scope="row">{{ '%0.1f'|format(result.wacc_adj_01 * 100|float) }}%</th>
+                      <td>{{ format_currency(result.valuation_01) }}</td>
+                      <td>{{ format_currency(result.valuation_06) }}</td>
+                      <td>{{ format_currency(result.valuation_11) }}</td>
+                      <td>{{ format_currency(result.valuation_16) }}</td>
+                      <td>{{ format_currency(result.valuation_21) }}</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">{{ '%0.1f'|format(result.wacc_adj_02 * 100|float) }}%</th>
+                      <td>{{ format_currency(result.valuation_02) }}</td>
+                      <td>{{ format_currency(result.valuation_07) }}</td>
+                      <td>{{ format_currency(result.valuation_12) }}</td>
+                      <td>{{ format_currency(result.valuation_17) }}</td>
+                      <td>{{ format_currency(result.valuation_22) }}</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">{{ '%0.1f'|format(result.wacc_adj_03 * 100|float) }}%</th>
+                      <td>{{ format_currency(result.valuation_03) }}</td>
+                      <td>{{ format_currency(result.valuation_08) }}</td>
+                      <td>{{ format_currency(result.valuation_13) }}</td>
+                      <td>{{ format_currency(result.valuation_18) }}</td>
+                      <td>{{ format_currency(result.valuation_23) }}</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">{{ '%0.1f'|format(result.wacc_adj_04 * 100|float) }}%</th>
+                      <td>{{ format_currency(result.valuation_04) }}</td>
+                      <td>{{ format_currency(result.valuation_09) }}</td>
+                      <td>{{ format_currency(result.valuation_14) }}</td>
+                      <td>{{ format_currency(result.valuation_19) }}</td>
+                      <td>{{ format_currency(result.valuation_24) }}</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">{{ '%0.1f'|format(result.wacc_adj_05 * 100|float) }}%</th>
+                      <td>{{ format_currency(result.valuation_05) }}</td>
+                      <td>{{ format_currency(result.valuation_10) }}</td>
+                      <td>{{ format_currency(result.valuation_15) }}</td>
+                      <td>{{ format_currency(result.valuation_20) }}</td>
+                      <td>{{ format_currency(result.valuation_25) }}</td>
+                      <!-- https://stackoverflow.com/questions/46144767/how-to-format-a-float-number-in-python-flask-and-jinja -->
+                  </tr>
+              </tbody>
+          </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5th slide -->
+      <section>
+        <div class="wrap">
+          <div class="">
+            <h2>評価基準日</h2>
+            <p class="text-subtitle"></p>
+            <hr>
+            <h3>株価算定の基準日</h3>
+            <p class="text-intro">●●年●●月●●日（入力された情報のうち、評価実施日に最も近い決算日）</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6th slide -->
+      <section>
+        <div class="wrap">
+          <div class="">
+            <h2>評価の手続</h2>
+            <p class="text-subtitle"></p>
+            <hr>
+            <h3>評価実施日</h3>
+            <p class="text-intro">●●年●●月●●日</p>
+            <h3>情報入力者</h3>
+            <p class="text-intro">●●　●●</p>
+            <h3>主な評価手続・使用した資料等</h3>
+            <p class="text-intro">貸借対照表、損益計算書などの財務諸表をはじめとする入力された全ての情報は、入力者が自己の責任において入力したものでありまる。報告者は入力された情報は一般に公正妥当な会計基準に基づき作成されているとみなしております。また、報告者は入力された情報について個別の検証手続きは一切行なっておりません。</p>
+            <p class="text-intro">割引率は8%を使用しております。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7th slide -->
+      <section>
+        <div class="wrap">
+          <div class="">
+            <h2>株価算定の前提及び責任の限定</h2>
+            <hr>
+            <p class="text-disclaimer">本件報告は、入力者が入力した情報をもとに、報告者が構築した算定式により機械的に算定された結果を報告するものであって、その他の手続きまたは方法に基づいて算定を実施した場合、結果が異なる可能性がります。</p>
+            <p class="text-disclaimer">評価業務は、その性質上、評価人が結論の正しさを保証するものではなく、本件業務も、報告者が何らの意見表明又は保証等をするものではありません。</p>
+            <p class="text-disclaimer">本件報告は、それによって必ずしも利用者が重要と考える全ての事項が明確になるものではありません。</p>
+            <p class="text-disclaimer">本件業務が、利用者の意図に合致したものであるか否かは専ら利用者の責任において判断されます。</p>
+            <p class="text-disclaimer">本件業務の結果を参考にした利用者の判断は、専ら利用者の責任で行われます。</p>
+            <p class="text-disclaimer">本件業務を遂行するにあたり、報告者は入力者が入力した情報を扱いますが、報告者は、入力者が入力した情報について何らの保証もせず、何らの責任も負いません。</p>
+            <p class="text-disclaimer">報告者は、入力者が入力した情報が、全て正確かつ完全なものであることを前提としており、独自にそれらの正確性及び完全性についての検証は行なっておらず、また検証の義務を負うものではありません。</p>
+          </div>
+        </div>
+      </section>
+      
+    </article>
+
+    <script src="../static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="../static/js/svg-icons.js"></script>
+  </body>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+#year_before_last {
+    background-color: rgb(190, 220, 229);
+}
+
+#last_year {
+    background-color: rgb(193, 236, 193);
+}
+
+label{
+    font-size: 10px;
+    display:inline-block;
+    width: 180px;
+}
+
+input {
+    width: 100px;
+}
+
+.table {
+    display: table;
+}
+
+.tr {
+    display: table-row;
+}
+
+.th {
+    display: table-header-group;
+    width: 20%;
+    height: 60px;
+}
+
+.td {
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+}
+
+.td .detail {
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.td input {
+    /* https://qiita.com/KengoShimizu/items/22c14b282fa9f53f4bd8 */
+    border-radius: 3px;
+    border: 2px solid #ddd;
+    width: 70%;
+    text-align: right;
+}
+
+input:invalid {
+    border: solid 3px red;
+}
+
+body {
+    font-family: 'BIZ UDPGothic', sans-serif;
+}
+
+.title-fs {
+    font-size: 14px;
+    border: solid;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    background-color: #e6e5e5;
+}
+
+table {
+    text-align: right;
+}
+
+thead {
+    vertical-align: top;
+}
